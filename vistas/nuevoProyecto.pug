@@ -1,0 +1,13 @@
+extends maestra
+
+include mixins/crearProyecto
+
+block contenido 
+    .contenido-principal 
+        h1 #{tituloPagina}
+
+        if errores
+            each error in errores
+                .alerta.error= error.texto
+        +crearProyecto(proyecto)
+        
